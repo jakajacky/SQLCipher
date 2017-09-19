@@ -17,6 +17,12 @@ SQLCipher数据库加密配置说明
 	<p style="line-height: 25px;">启动终端，cd到你的项目根目录，使用git克隆SQLCipher代码</p>
 	<pre><code>$ cd ~/Documents/code/SQLCipherApp
 $ git clone https://github.com/sqlcipher/sqlcipher.git</code></pre>
+
+	<h2 style="color: #146a94;">Xcode项目配置</h2>
+	<p style="line-height: 25px;">将SQLCipher库提供<font color="#c7254e">sqlcipher.xcodeproj</font>文件添加到你的项目中，编译成静态库，并链接到项目target上。</p>
+	<h3 style="color: #146a94;">添加项目依赖</h3>
+	<p style="line-height: 25px;">在Xcode中打开您的iOS应用程序的项目或工作区，在左侧文件目录中找到iOS应用程序的顶级Project图标并单击选中。右键单击该处，然后选择<font color="#146a94">“Add Files to 'XXX'”</font>（XXX将根据您的应用程序的名称而有所不同）。由于我们将SQLCipher直接克隆到与iOS应用程序相同的文件夹中，所以您应该在根项目文件夹中看到一个<font color="#c7254e">sqlcipher</font>文件夹。打开此文件夹并选择<font color="#c7254e">sqlcipher.xcodeproj</font>:</p>
+	<img src="https://github.com/jakajacky/SQLCipher/blob/master/img/add-sqlcipher-project-file.png"></img>
 </div>
 </body>
 </html>
