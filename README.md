@@ -26,14 +26,18 @@ $ git clone https://github.com/sqlcipher/sqlcipher.git</code></pre>
 	<img src="https://github.com/jakajacky/SQLCipher/blob/master/img/add-sqlcipher-project-file.png"></img>
 	<img src="https://github.com/jakajacky/SQLCipher/blob/master/img/select-sqlcipher-project-file.png"></img>
 <br>
-	<h3 style="color: #146a94;">添加项目配置项</h3>
+	<h3 style="color: #146a94;">添加Project配置项</h3>
 	<p style="line-height: 25px;">开始设置Project的Build settings（注意是Project，而不是Targets），选中Build Settings，搜索“Header Search Paths”，对应的增加路径：<font color="#c7254e">$(PROJECT_DIR)/sqlcipher</font>:</p>
-	<img style="width: 600px;height: 474px;" src="https://github.com/jakajacky/SQLCipher/blob/master/img/tech.png"></img>
+	<img src="https://github.com/jakajacky/SQLCipher/blob/master/img/tech.png"></img>
 	<img src="https://github.com/jakajacky/SQLCipher/blob/master/img/sqlcipher-xcode-header-search-paths.png"></img>
 	<p style="line-height: 25px;">接下来，搜索“Other Linker Flags”，对应的增加路径：<font color="#c7254e">$(BUILT_PRODUCTS_DIR)/libsqlcipher.a</font>，并拖动放到第一个位置，以确保SQLCipher是第一个被链入你的项目的静态库</p>
 	<img src="https://github.com/jakajacky/SQLCipher/blob/master/img/sqlcipher-xcode-other-linker-flags.png"></img>
 	<p style="line-height: 25px;">然后，搜索“Other C Flags”，对应的增加路径：<font color="#c7254e">-DSQLITE_HAS_CODEC</font>，确保SQLCipher能够编译成功</p>
 	<img src="https://github.com/jakajacky/SQLCipher/blob/master/img/sqlcipher-xcode-other-c-flags.png"></img>
+<br>
+	<h3 style="color: #146a94;">添加Targets配置项</h3>
+	<p style="line-height: 25px;">下一步，选择“Targets”，给项目的target增加Target依赖确保SQLCipher在项目代码前面编译，选择”Build phases“，展开”Target Dependencies“，点击<font color="#c7254e">+</font>在文件中选择<font color="#c7254e">sqlcipher</font>静态库：</p>
+	<img src="https://github.com/jakajacky/SQLCipher/blob/master/img/sqlcipher-xcode-select-target-dependency.png"></img>
 
 </div>
 </body>
