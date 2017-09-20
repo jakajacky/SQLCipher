@@ -53,15 +53,12 @@ $ git clone https://github.com/sqlcipher/sqlcipher.git</code></pre>
     NSData *keyData = [NSData dataWithBytes:[key UTF8String] length:(NSUInteger)strlen([key UTF8String])];
     return [self setKeyWithData:keyData];
 }
-
 - (BOOL)setKeyWithData:(NSData *)keyData {
     #ifdef SQLITE_HAS_CODEC
     if (!keyData) {
         return NO;
-    }
-    
+    }    
     int rc = sqlite3_key(_db, [keyData bytes], (int)[keyData length]);
-    
     return (rc == SQLITE_OK);
     #else
     #pragma unused(keyData)
@@ -70,7 +67,6 @@ $ git clone https://github.com/sqlcipher/sqlcipher.git</code></pre>
 }</code></pre>
 	<br>
 	<p>上面摘自FMDatabase.m，可见里面也是用了sqlite3_key()；具体就不详细写了。</p>
-
 </div>
 </body>
 </html>
