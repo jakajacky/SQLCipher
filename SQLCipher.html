@@ -54,8 +54,7 @@ $ git clone https://github.com/sqlcipher/sqlcipher.git</code></pre>
     
     return [self setKeyWithData:keyData];
 }
-
-- (BOOL)setKeyWithData:(NSData *)keyData {
+-(BOOL)setKeyWithData:(NSData *)keyData {
     #ifdef SQLITE_HAS_CODEC
     if (!keyData) {
         return NO;
