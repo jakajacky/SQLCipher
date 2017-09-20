@@ -6,6 +6,7 @@
 </head>
 <body>
 <div style="width: 1200px;">
+	<br>
 	<h1 style="color: #146a94;">为Xcode项目添加SQLCipher</h1>
 	<p style="line-height: 25px;">SQLite已经是iOS应用程序中持久数据存储的流行API，因此开发的上升是显而易见的。作为一名程序员，您可以使用一个稳定的，经过充分记录的API，它可以在Objective-C中提供许多好的包装器，如FMDB和加密核心数据。所有安全问题都与应用程序代码完全脱钩，并由底层框架进行管理。
 	<p style="line-height: 25px;">SQLCipher项目的框架代码是开源的，因此用户可以确信应用程序不使用不安全或专有的安全代码。此外，SQLCipher还可以在Android，Linux，OSX和Windows上编译，用于开发跨平台应用程序的用户。</p>
@@ -24,6 +25,16 @@ $ git clone https://github.com/sqlcipher/sqlcipher.git</code></pre>
 	<h3 style="color: #146a94;">添加项目依赖</h3>
 	<p style="line-height: 25px;">在Xcode中打开您的iOS应用程序的项目或工作区，在左侧文件目录中找到iOS应用程序的顶级Project图标并单击选中。右键单击该处，然后选择<font color="#146a94">“Add Files to 'XXX'”</font>（XXX将根据您的应用程序的名称而有所不同）。由于我们将SQLCipher直接克隆到与iOS应用程序相同的文件夹中，所以您应该在根项目文件夹中看到一个<font color="#c7254e">sqlcipher</font>文件夹。打开此文件夹并选择<font color="#c7254e">sqlcipher.xcodeproj</font>:</p>
 	<img src="https://github.com/jakajacky/SQLCipher/blob/master/img/add-sqlcipher-project-file.png"></img>
+	<img src="https://github.com/jakajacky/SQLCipher/blob/master/img/select-sqlcipher-project-file.png"></img>
+
+	<h3 style="color: #146a94;">添加项目配置项</h3>
+	<p style="line-height: 25px;">开始设置Project的Build settings（注意是Project，而不是Targets），选中Build Settings，搜索“Header Search Paths”，对应的增加路径：<font color="#c7254e">$(PROJECT_DIR)/sqlcipher</font>:</p>
+	<img src="https://github.com/jakajacky/SQLCipher/blob/master/img/sqlcipher-xcode-header-search-paths.png"></img>
+	<p style="line-height: 25px;">接下来，搜索“Other Linker Flags”，对应的增加路径：<font color="#c7254e">$(BUILT_PRODUCTS_DIR)/libsqlcipher.a</font>，并拖动放到第一个位置，以确保SQLCipher是第一个被链入你的项目的静态库</p>
+	<img src="https://github.com/jakajacky/SQLCipher/blob/master/img/sqlcipher-xcode-other-linker-flags.png"></img>
+	<p style="line-height: 25px;">然后，搜索“Other C Flags”，对应的增加路径：<font color="#c7254e">-DSQLITE_HAS_CODEC</font>，确保SQLCipher能够编译成功</p>
+	<img src="https://github.com/jakajacky/SQLCipher/blob/master/img/sqlcipher-xcode-other-c-flags.png"></img>
+
 </div>
 </body>
 </html>
