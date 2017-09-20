@@ -28,7 +28,7 @@ $ git clone https://github.com/sqlcipher/sqlcipher.git</code></pre>
 <br>
 	<h3 style="color: #146a94;">添加项目配置项</h3>
 	<p style="line-height: 25px;">开始设置Project的Build settings（注意是Project，而不是Targets），选中Build Settings，搜索“Header Search Paths”，对应的增加路径：<font color="#c7254e">$(PROJECT_DIR)/sqlcipher</font>:</p>
-	<img src="https://github.com/jakajacky/SQLCipher/blob/master/img/tech.png"></img>
+	<img style="width: 600px;height: 474px;" src="https://github.com/jakajacky/SQLCipher/blob/master/img/tech.png"></img>
 	<img src="https://github.com/jakajacky/SQLCipher/blob/master/img/sqlcipher-xcode-header-search-paths.png"></img>
 	<p style="line-height: 25px;">接下来，搜索“Other Linker Flags”，对应的增加路径：<font color="#c7254e">$(BUILT_PRODUCTS_DIR)/libsqlcipher.a</font>，并拖动放到第一个位置，以确保SQLCipher是第一个被链入你的项目的静态库</p>
 	<img src="https://github.com/jakajacky/SQLCipher/blob/master/img/sqlcipher-xcode-other-linker-flags.png"></img>
