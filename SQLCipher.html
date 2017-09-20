@@ -45,6 +45,32 @@ $ git clone https://github.com/sqlcipher/sqlcipher.git</code></pre>
 	<p style="line-height: 25px;">最后，再给”Link Binary With Libraries“添加”Security.framework“。</p>
 	<img src="https://github.com/jakajacky/SQLCipher/blob/master/img/sqlcipher-add-security-framework.png"></img>
 	<p style="line-height: 25px;color: #146a94">Tip:如果libsqlite3.dylib或者其他SQLite库已经存在于”Link Binary With Libraries“列表中，记得要删除掉！！！</p>
+	<p>如果项目中还有其他主要target，重复上面的步骤即可</p>
+<br>
+	<h3 style="color: #146a94;">集成代码</h3>
+	<p>到此SQLCipher已经配置完毕，接下来就是添加代码，我用的FMDB，本身支持splcipher加密：</p>
+	<pre><code>- (BOOL)setKey:(NSString*)key {
+    NSData *keyData = [NSData dataWithBytes:[key UTF8String] length:(NSUInteger)strlen([key UTF8String])];
+    
+    return [self setKeyWithData:keyData];
+}
+
+- (BOOL)setKeyWithData:(NSData *)keyData {
+    #ifdef SQLITE_HAS_CODEC
+    if (!keyData) {
+        return NO;
+    }
+    
+    int rc = sqlite3_key(_db, [keyData bytes], (int)[keyData length]);
+    
+    return (rc == SQLITE_OK);
+    #else
+    #pragma unused(keyData)
+    return NO;
+    #endif
+}</code></pre>
+	<br>
+	<p>上面摘自FMDatabase.m，可见里面也是用了sqlite3_key()；具体就不详细写了。</p>
 
 </div>
 </body>
