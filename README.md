@@ -40,7 +40,7 @@ $ git clone https://github.com/sqlcipher/sqlcipher.git</code></pre>
 	<p style="line-height: 25px;">展开”Target Dependencies“，点击<font color="#c7254e">+</font>在文件中选择<font color="#c7254e">sqlcipher</font>静态库：</p>
 	<img src="https://github.com/jakajacky/SQLCipher/blob/master/img/sqlcipher-xcode-select-target-dependency.png"></img>
 	<p style="line-height: 25px;">展开”Link Binary With Libraries“，点击<font color="#c7254e">+</font>在文件中选择<font color="#c7254e">libsqlcipher.a</font>静态库：</p>
-	<img src="https://github.com/jakajacky/SQLCipher/blob/master/img/sqlcipher-xcode-select-target-dependency.png"></img>
+	<img src="https://github.com/jakajacky/SQLCipher/blob/master/img/sqlcipher-xcode-link-binary-with-libraries.png"></img>
 
 
 </div>

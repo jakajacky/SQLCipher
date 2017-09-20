@@ -37,8 +37,13 @@ $ git clone https://github.com/sqlcipher/sqlcipher.git</code></pre>
 	<img src="https://github.com/jakajacky/SQLCipher/blob/master/img/sqlcipher-xcode-other-c-flags.png"></img>
 <br>
 	<h3 style="color: #146a94;">添加Targets配置项</h3>
-	<p style="line-height: 25px;">下一步，选择“Targets”，给项目的target增加Target依赖确保SQLCipher在项目代码前面编译，选择”Build phases“，展开”Target Dependencies“，点击<font color="#c7254e">+</font>在文件中选择<font color="#c7254e">sqlcipher</font>静态库：</p>
+	<p style="line-height: 25px;">下一步，选择“Targets”，给项目的target增加Target依赖确保SQLCipher在项目代码前面编译，选择”Build phases“</p>
+	<p style="line-height: 25px;">展开”Target Dependencies“，点击<font color="#c7254e">+</font>在文件中选择<font color="#c7254e">sqlcipher</font>静态库：</p>
 	<img src="https://github.com/jakajacky/SQLCipher/blob/master/img/sqlcipher-xcode-select-target-dependency.png"></img>
+	<p style="line-height: 25px;">展开”Link Binary With Libraries“，点击<font color="#c7254e">+</font>在文件中选择<font color="#c7254e">libsqlcipher.a</font>静态库：</p>
+	<img src="https://github.com/jakajacky/SQLCipher/blob/master/img/sqlcipher-xcode-link-binary-with-libraries.png"></img>
+	<p style="line-height: 25px;">最后，再给”Link Binary With Libraries“添加”Security.framework“。</p>
+	<img src="https://github.com/jakajacky/SQLCipher/blob/master/img/sqlcipher-xcode-link-binary-with-libraries.png"></img>
 
 </div>
 </body>
