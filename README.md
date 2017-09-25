@@ -1,5 +1,7 @@
 # SQLCipher
 SQLCipher数据库加密配置说明
+本文不涉及代码编写，如有疑问，可参考<a href="https://www.zetetic.net/sqlcipher/ios-tutorial/">https://www.zetetic.net/sqlcipher/ios-tutorial/</a>
+或者issue联系
 
 <!DOCTYPE html>
 <html>
