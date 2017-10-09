@@ -74,9 +74,10 @@ $ git clone https://github.com/sqlcipher/sqlcipher.git</code></pre>
 	<h3 style="color: #146a94;">补充</h3>
 	<p>Xcode9.0之后，SQLCipher配合FMDB的数据库加密项目，在编译的时候报错：</p>
 	<img src="https://github.com/jakajacky/SQLCipher/blob/master/img/error_sqlite3_key.png"></img>
+	<br>
 	<img src="https://github.com/jakajacky/SQLCipher/blob/master/img/error_sqlite3_rekey.png"></img>
 	<pre><code>
-		#if defined(SQLITE_HAS_CODEC)
+#if defined(SQLITE_HAS_CODEC)
 SQLITE_API int sqlite3_key(sqlite3 *db, const void *pKey, int nKey);
 SQLITE_API int sqlite3_rekey(sqlite3 *db, const void *pKey, int nKey);
 #endif
