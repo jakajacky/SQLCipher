@@ -76,6 +76,8 @@ $ git clone https://github.com/sqlcipher/sqlcipher.git</code></pre>
 	<img src="https://github.com/jakajacky/SQLCipher/blob/master/img/error_sqlite3_key.png"></img>
 	<br>
 	<img src="https://github.com/jakajacky/SQLCipher/blob/master/img/error_sqlite3_rekey.png"></img>
+	<br>
+	<p>解决办法：在FMDatabase.m中添加声明</p>
 	<pre><code>
 #if defined(SQLITE_HAS_CODEC)
 SQLITE_API int sqlite3_key(sqlite3 *db, const void *pKey, int nKey);
