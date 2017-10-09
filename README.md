@@ -70,6 +70,7 @@ $ git clone https://github.com/sqlcipher/sqlcipher.git</code></pre>
 	<br>
 	<p>上面摘自FMDatabase.m，可见里面也是用了sqlite3_key()；具体就不详细写了。</p>
 
+<br>
 	<h3 style="color: #146a94;">补充</h3>
 	<p>Xcode9.0之后，SQLCipher配合FMDB的数据库加密项目，在编译的时候报错：</p>
 	<img src="https://github.com/jakajacky/SQLCipher/blob/master/img/error_sqlite3_key.png"></img>
